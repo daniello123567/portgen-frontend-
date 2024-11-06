@@ -37,7 +37,7 @@ function Geturl() {
         setisBuilding(false);
         window.location.href=datax.yournewurl;
       } else {
-        alert('SOMETHING WENT WRONG, PLEASE TRY AGAIN!')
+        alert('ERROR FROM VERCEL!,Check Internet')
       }
     } catch (error) {
       if (error) alert('SOMETHING WENT WRONG PLEASE RETRY AGAIN!')
