@@ -27,7 +27,6 @@ function Geturl() {
       const response = await fetch('https://portfoliogen.vercel.app/Template', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials:"include",
         body: JSON.stringify(data)
       });
 
@@ -44,8 +43,9 @@ function Geturl() {
 
     }
   }
-  useQuery({ queryKey: ["uploader"], queryFn: () => getUrlFunc() })
-
+  const dataman = useQuery({ queryKey: ["uploader"], queryFn: () => getUrlFunc() })
+  console.log(dataman);
+  
   return (
     <motion.div className='md:w-[60%] px-[1em] gap-[.8em] flex-col flex justify-center items-center w-full rounded-[.7em] h-full bg-white shadow-lg md:h-[80%]'
       transition={{ duration: 0.3, delay: 0.5 }}
