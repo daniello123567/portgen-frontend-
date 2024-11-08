@@ -37,7 +37,6 @@ export default function FormOne (){
     }
     }
   }
-  console.log(OverallInfo,"hello");
 
   return (<div className={`${sansRegular.className} h-max mx-auto max-w-[34.75em] p-[2em]`}>
     <label className='text-[.9em]' htmlFor="name">Display Name:</label>

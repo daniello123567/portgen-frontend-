@@ -1,7 +1,6 @@
 import React, {useState } from "react";
 import localFont from "next/font/local";
 import { infomation } from "@/app/store";
-import ProjectUpdate from "./ProjectUpdate";
 const sansRegular = localFont({src:'../../fonts/googl-sans-reg.woff2'})
 
 export default function FormThree (){
@@ -24,15 +23,14 @@ export default function FormThree (){
           return <Skill key={skill} skill={skill} />
          })}
     </div>
-    <label className='text-[.9em] font-[900]' htmlFor="name">Skill:</label>
+    <p className='text-[.9em] text-center font-[900]'>Your Skill</p>
     <div className="w-full relative h-max">
-      <input value={skill} onChange={(e)=>{e.stopPropagation();setSkill(e.target.value)}} id='name' placeholder='e.g react' className='border skillInput mt-[.4em] placeholder:text-[#444746] mb-[.5em] px-[0.9375em] outline-none placeholder:font-[400] w-full py-[0.8125em] text-[1rem] border-[#1F1F1F] rounded-[0.25em]' title='name' type="text" />
+      <input value={skill} onChange={(e)=>{e.stopPropagation();setSkill(e.target.value)}} id='name' placeholder='Enter a skill e.g React' className='border skillInput mt-[.4em] placeholder:text-[#444746] mb-[.5em] px-[0.9375em] outline-none placeholder:font-[400] w-full py-[0.8125em] text-[1rem] border-[#1F1F1F] rounded-[0.25em]' title='name' type="text" />
      <div onClick={()=>{
       setSkills(skill);
       setSkill('')
      }} className="w-max p-[.5em] top-3 right-3 cursor-pointer bg-[#0b57d0] text-white flex justify-center items-center absolute h-[2.5em] rounded-full ">&#43; Add Skill</div>
     </div>
 
-    <ProjectUpdate/>
   </div>)
 }

@@ -11,6 +11,7 @@ import FormThree from './components/Form3'
 import { active, infomation, isThereErrorSomewhere } from '../store'
 import Geturl from './components/Geturl'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Form4 from './components/Form4'
 const font = localFont({ src: '../fonts/googl-sans-reg.woff2' })
 function Page() {
   const { error } = isThereErrorSomewhere()
@@ -23,7 +24,9 @@ function Page() {
     } else if (activeInd === 1) {
       return !OverallInfo.ProfessionalIntro || !OverallInfo.ProfessionalTagline
     } else if (activeInd === 2) {
-      return !OverallInfo.Projects.length || !OverallInfo.Skills.length
+      return OverallInfo.Skills.length ==0
+    }else if(activeInd ===3 ){
+      return OverallInfo.Projects.length==0
     }
   }
   const checkCurrentIndexIfInputIsComplete = (): boolean => {
@@ -56,7 +59,7 @@ function Page() {
          <AnimatePresence>
       {formVisibility&&
       <motion.div initial={{y:0,opacity:1}} transition={{duration:0.2}} exit={{y:-100,opacity:0}} className='w-[90%] pb-[1em] relative rounded-[1.75em] h-max min-h-[90%] bg-white '>
-        <div className='px-[2em] mx-auto max-w-[34.75em] pt-[2em]'>
+        <div className='px-[2em] h-max mx-auto max-w-[34.75em] pt-[2em]'>
           <p className='text-[2em] font-[400] text-[#1F1F1F]'>Getting Started</p>
           <p className='text-[1em] font-[400] mt-[1em] text-[#1F1F1F]'>Just Some Info and You&apos;re ready to Go!🚀</p>
         </div>
@@ -88,12 +91,15 @@ function Page() {
           <SwiperSlide>
             <FormThree />
           </SwiperSlide>
+          <SwiperSlide className='w-full h-max'>
+            <Form4/>
+          </SwiperSlide>
 
         </Swiper>
         <div className='flex w-full justify-center gap-[1em] items-center'>
           {<button className={`custom-swiper-button-prev  w-[4.92083125em] text-white h-[2.5em] text-[0.875rem] font-[500] disabled:hidden rounded-[1.25em] bg-[#0b57d0]`}>Prev</button>}
-          {activeIndex!==2&&<button className={`custom-swiper-button-next ${checkCurrentIndexIfInputIsComplete() && 'pointer-events-none opacity-40'}  w-[4.92083125em] ${error && 'pointer-events-none opacity-40'} text-white h-[2.5em] text-[0.875rem] font-[500] disabled:hidden rounded-[1.25em] bg-[#0b57d0]`}>Next</button>}
-          {activeIndex==2&&<button onClick={handleDone} className='custom-swiper-button-next  w-[4.92083125em] text-white h-[2.5em] text-[0.875rem] font-[500] disabled:hidden rounded-[1.25em] bg-[#0b57d0]'>Done</button>}
+          {activeIndex!==3&&<button className={`custom-swiper-button-next ${checkCurrentIndexIfInputIsComplete() && 'pointer-events-none opacity-40'}  w-[4.92083125em] ${error && 'pointer-events-none opacity-40'} text-white h-[2.5em] text-[0.875rem] font-[500] disabled:hidden rounded-[1.25em] bg-[#0b57d0]`}>Next</button>}
+          {activeIndex==3&&<button onClick={handleDone} className='custom-swiper-button-next  w-[4.92083125em] text-white h-[2.5em] text-[0.875rem] font-[500] disabled:hidden rounded-[1.25em] bg-[#0b57d0]'>Done</button>}
 
         </div>
 

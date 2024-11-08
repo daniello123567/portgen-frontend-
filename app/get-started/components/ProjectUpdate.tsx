@@ -63,7 +63,6 @@ function ProjectUpdate() {
       const path = await UploadFile(file)
       if (path) {
         const { publicUrl } = getPublicUrl(path);
-        console.log(publicUrl);
 
         setproject({ ...Project, image: publicUrl });
         setIsloading(false)
@@ -94,16 +93,15 @@ function ProjectUpdate() {
     setInfo("Projects", [...newProjects])
 
   }
-  console.log(Project, "project");
 
   const SingleProject = ({ name, id }: { name: string, id: string }) => {
     return <div className='bg-white relative rounded px-[.5em] w-max h-max tracking-tight'>{name}
       <div onClick={() => removeProject(id)} className='absolute cursor-pointer  px-[.4em] flex justify-center items-center rounded-full right-[-.5em] top-[-1em]  text-white text-[1.1em] bg-[#000000]'>&times;</div></div>
   }
   return (<>
-    <div className='w-full p-[.5em]  h-max min-h-[7em] bg-slate-300'>
+    <div className='w-full p-[.5em] mt-[1em]  h-[5em]  bg-slate-300'>
       <p className=''>Your Projects:</p>
-      {OverallInfo.Projects.length === 0 && <div className='w-full h-full flex flex-col justify-center items-center'>
+      {OverallInfo.Projects.length === 0 && <div className='w-full h-full'>
         <p className='text-center text-white'>None</p>
         <p className='text-center text-[.7em]'>Enter Your Project along with other informations and click &apos;Add Project&apos;</p>
       </div>}
@@ -135,5 +133,4 @@ function ProjectUpdate() {
   </>
   )
 }
-
 export default ProjectUpdate
