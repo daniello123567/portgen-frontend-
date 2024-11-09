@@ -100,13 +100,13 @@ export default Imager
 import Image from 'next/image'
 import Link from 'next/link'
 function Main() {
-const NameofUser = '${String(NamesOfUser)}';
-const WorkofUser = '${String(RoleOfUser)}';
-const Heromsg = '${String(Heromsg)}';
-const Herosummary = '${String(Herosummary)}';
-const src = '${String(UsersImage)}';
+const NameofUser = "${String(NamesOfUser)}";
+const WorkofUser = "${String(RoleOfUser)}";
+const Heromsg = "${String(Heromsg)}";
+const Herosummary = "${String(Herosummary)}";
+const src = "${String(UsersImage)}";
 ;
-const Email = 'mailto:${Email}';
+const Email = "mailto:${Email}";
 
 const Skills = ${Skills};
 const Projects:Array<Project> = ${projects}

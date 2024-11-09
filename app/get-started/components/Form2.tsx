@@ -13,7 +13,7 @@ export default function FormTwo (){
     const wordsCount = e.target.value.trim().split(/\s+/);
     if(wordsCount.length<10){
           isThereError(true)
-           setErrorFirstElement('maximum of 10 words expected!')
+           setErrorFirstElement('minimum of 10 words expected!')
     }else if(wordsCount.length>=10){
      setErrorFirstElement('')
      isThereError(false)
@@ -29,7 +29,7 @@ export default function FormTwo (){
    const wordsCount = e.target.value.trim().split(/\s+/);
    if(wordsCount.length<20){
          isThereError(true)
-          setErrorSecEl('maximum of 20 words expected!')
+          setErrorSecEl('minimum of 20 words expected!')
    }else if(wordsCount.length>=20){
     setErrorSecEl('')
         isThereError(false)

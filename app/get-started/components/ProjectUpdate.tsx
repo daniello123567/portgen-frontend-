@@ -53,7 +53,7 @@ function ProjectUpdate() {
     if (data) {
       return data.path
     } else if (error) {
-      alert(error)
+      alert(`Error!,Pls try uploading your image again without leaving the tab!`)
     }
   }
   const handleImage = async (e: React.ChangeEvent<HTMLInputElement>) => {

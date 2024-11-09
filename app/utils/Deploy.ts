@@ -55,14 +55,17 @@ const CheckRedyState = async()=>{
   return project.targets.production.readyState.toString()
 }
 const ResolveWhenReadyState = async ()=>{
-  return new Promise(async ()=>{
+  return new Promise(async (resolve,reject)=>{
     const checkingForBuild = setInterval(async ()=>{
       if(await CheckRedyState()==='READY'){
-        clearInterval(checkingForBuild);
-         console.log(`your url is ready at ${aliase}`);
+         clearInterval(checkingForBuild);
+         resolve(aliase);
+         return aliase;
+      }else if(await CheckRedyState()==="ERROR"){
+        alert('error ocuured in vercels api retry again by reloading browser');
+        reject('error sorry bro,just try again')
       }else{
         console.log(await CheckRedyState(),"VERCEL DEPLOY API");
-
       }
     },2000);
 
@@ -70,8 +73,7 @@ const ResolveWhenReadyState = async ()=>{
   })
 }
 
-await ResolveWhenReadyState()
-return aliase;
-
+const url = await ResolveWhenReadyState()
+return url
 }
 export default DeployToVercel;
