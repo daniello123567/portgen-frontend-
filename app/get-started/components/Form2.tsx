@@ -11,9 +11,9 @@ export default function FormTwo (){
 
   const checkForError = (e:React.ChangeEvent<HTMLTextAreaElement>)=>{
     const wordsCount = e.target.value.trim().split(/\s+/);
-    if(wordsCount.length<10){
+    if(wordsCount.length<8){
           isThereError(true)
-           setErrorFirstElement('minimum of 10 words expected!')
+           setErrorFirstElement('minimum of 8 words expected!')
     }else if(wordsCount.length>=10){
      setErrorFirstElement('')
      isThereError(false)
@@ -27,9 +27,9 @@ export default function FormTwo (){
 
  const checkForError2 = (e:React.ChangeEvent<HTMLTextAreaElement>)=>{
    const wordsCount = e.target.value.trim().split(/\s+/);
-   if(wordsCount.length<20){
+   if(wordsCount.length<12){
          isThereError(true)
-          setErrorSecEl('minimum of 20 words expected!')
+          setErrorSecEl('minimum of 12 words expected!')
    }else if(wordsCount.length>=20){
     setErrorSecEl('')
         isThereError(false)

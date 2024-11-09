@@ -100,12 +100,12 @@ function ProjectUpdate() {
   }
   return (<>
     <div className='w-full p-[.5em] mt-[1em]  h-[5em]  bg-slate-300'>
-      <p className=''>Your Projects:</p>
+      <p className='overflow-auto '>Your Projects:</p>
       {OverallInfo.Projects.length === 0 && <div className='w-full h-full'>
         <p className='text-center text-white'>None</p>
         <p className='text-center text-[.7em]'>Enter Your Project along with other informations and click &apos;Add Project&apos;</p>
       </div>}
-      <div className='w-full py-[1em] flex-wrap h-max overflow-y-auto flex gap-[1em]'>
+      <div className='w-full py-[1em] flex-wrap h-max overflow-auto flex gap-[1em]'>
         {OverallInfo.Projects.map((project) => {
           return <SingleProject key={project.id} id={project.id} name={project.Name} />
         })}
