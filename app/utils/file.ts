@@ -355,23 +355,6 @@ theme: {
  }
  },
 },
-plugins: [],
-safelist: [
- {
-   pattern: /bg-(red|orange|pink|rose|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|stone|neutral|zinc|gray|slate)-(50|100|200|300|400|500|600|700|800|900|950)/,
- },{
-   pattern: /from-(red|orange|pink|rose|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|stone|neutral|zinc|gray|slate)-(50|100|200|300|400|500|600|700|800|900|950)/,
- },
- {
-   pattern: /via-(red|orange|pink|rose|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|stone|neutral|zinc|gray|slate)-(50|100|200|300|400|500|600|700|800|900|950)/,
- },
- {
-   pattern: /to-(red|orange|pink|rose|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|stone|neutral|zinc|gray|slate)-(50|100|200|300|400|500|600|700|800|900|950)/,
- },
- {
-   pattern: /bg-gradient-to-(t|tt|tr|r|br|b|bl|l|tl)/,
- },
-],
 
 };
 export default config;
