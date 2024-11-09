@@ -58,7 +58,7 @@ function Page() {
     <div className={`${font.className} sm:p-[1em]  w-full bg-[#f0f4f9]  flex justify-center items-center h-full`}>
          <AnimatePresence>
       {formVisibility&&
-      <motion.div initial={{y:0,opacity:1}} transition={{duration:0.2}} exit={{y:-100,opacity:0}} className='w-[90%] pb-[1em] relative rounded-[1.75em] h-max min-h-[90%] bg-white '>
+      <motion.div initial={{y:0,opacity:1}} transition={{duration:0.2}} exit={{y:-100,opacity:0}} className='sm:w-[90%] w-full rounded-none pb-[1em] relative sm:rounded-[1.75em] h-max min-h-[90%] bg-white '>
         <div className='px-[2em] h-max mx-auto max-w-[34.75em] pt-[2em]'>
           <p className='text-[2em] font-[400] text-[#1F1F1F]'>Getting Started</p>
           <p className='text-[1em] font-[400] mt-[1em] text-[#1F1F1F]'>Just Some Info and You&apos;re ready to Go!🚀</p>
@@ -91,7 +91,7 @@ function Page() {
           <SwiperSlide>
             <FormThree />
           </SwiperSlide>
-          <SwiperSlide className='w-full h-max'>
+          <SwiperSlide>
             <Form4/>
           </SwiperSlide>
 
